@@ -8,7 +8,7 @@ function App() {
     api: 'https://ws.audioscrobbler.com/2.0',
     endpoint: '/?method=track.search&track=',
     format: 'format=json',
-    songName: 'Believe',
+    songName: 'believe',
 };
 
   const [searchString, setSearchString] = useState("");
@@ -18,18 +18,20 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPlaylist({ playlistTitle, searchString });
-    console.log(playlist);
-}
+    getAllSongs()}
+    // setPlaylist({ playlistTitle, searchString });
+    // console.log(playlist);}
 
+function getAllSongs(){
 const breakUpSearchString = searchString.split(" ");
 
 console.log(breakUpSearchString)
-console.log(breakUpSearchString[1])
+const firstWord = breakUpSearchString[0];
+console.log(firstWord)
+fetchSongData(firstWord)}
 
-useEffect(() => {
-
-  const url = `${searchOptions.api}${searchOptions.endpoint}${searchOptions.songName}&api_key=${searchOptions.key}&${searchOptions.format}`;
+function fetchSongData(songName) {
+const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${searchOptions.key}&${searchOptions.format}`;
 
   console.log(url)
 
@@ -37,19 +39,15 @@ useEffect(() => {
       .then(response => response.json())
 
       .then(data => {
-          setResults(data.results.trackmatches.track);
+          const filteredArray = data.results.trackmatches.track.filter(
+          result => result.name.toLowerCase()===(songName.toLowerCase()));
+          console.log(filteredArray)
+          setResults(filteredArray);
           }
       )
-}, []);
+        }
 
-console.log(results)
-
-const filteredArray = results.filter(
-  result => result.name===(searchOptions.songName));
-
-  console.log(filteredArray)
-
-const randomArrayIndex = Math.floor(Math.random() * (filteredArray.length));
+const randomArrayIndex = Math.floor(Math.random() * (results.length));
 
   return (
     <form onSubmit={handleSubmit} className="form-vertical">
@@ -95,11 +93,13 @@ const randomArrayIndex = Math.floor(Math.random() * (filteredArray.length));
 
         </div>
 
-        {results[0] 
-                && 
+        {results.map(result => {
+          return(
                 <div className='playlistDisplay'>
-                    {filteredArray[randomArrayIndex].name} by {filteredArray[randomArrayIndex].artist}
-                </div>
+                    {results[randomArrayIndex].name} by {result.artist}
+                </div>)
+        }
+        )
             }
 
         <p>{ playlistTitle }</p>
@@ -109,4 +109,5 @@ const randomArrayIndex = Math.floor(Math.random() * (filteredArray.length));
         </form>
   );
 }
+
 export default App;
