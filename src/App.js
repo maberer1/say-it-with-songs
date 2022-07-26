@@ -8,27 +8,23 @@ function App() {
     api: 'https://ws.audioscrobbler.com/2.0',
     endpoint: '/?method=track.search&track=',
     format: 'format=json',
-    songName: 'believe',
 };
 
   const [searchString, setSearchString] = useState("");
   const [playlistTitle, setPlaylistTitle] = useState("");
-  const [playlist, setPlaylist] = useState({});
   const [results, setResults] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     getAllSongs()}
-    // setPlaylist({ playlistTitle, searchString });
-    // console.log(playlist);}
 
 function getAllSongs(){
-const breakUpSearchString = searchString.split(" ");
+  const breakUpSearchString = searchString.split(" ");
 
-console.log(breakUpSearchString)
-const firstWord = breakUpSearchString[0];
-console.log(firstWord)
-fetchSongData(firstWord)}
+  for (let i=0; i < breakUpSearchString.length; i++){
+    fetchSongData(breakUpSearchString[i]);
+  }
+}
 
 function fetchSongData(songName) {
 const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${searchOptions.key}&${searchOptions.format}`;
@@ -93,18 +89,16 @@ const randomArrayIndex = Math.floor(Math.random() * (results.length));
 
         </div>
 
+        <p>{ playlistTitle }</p>
+
         {results.map(result => {
           return(
-                <div className='playlistDisplay'>
+                <div className='playlistDisplay' key={result.id}>
                     {results[randomArrayIndex].name} by {result.artist}
                 </div>)
         }
         )
             }
-
-        <p>{ playlistTitle }</p>
-        <p>{ searchString }</p>
-        <p>hello</p>
 
         </form>
   );
