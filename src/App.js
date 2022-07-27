@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
 import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  // A simple, interactive interface that allows a user to create a playlist that uses song titles to display a custom meesage.
 
   const searchOptions = {
     key: process.env.REACT_APP_MUSIC_KEY,
@@ -22,42 +23,43 @@ function App() {
 function getAllSongs(){
   // Break up searchString (entered message array) into array of individual words.
   const breakUpSearchString = searchString.split(" ");
+  console.log(breakUpSearchString + " <<< breakUpSearchString")
+  console.log(fetchSongData + " <<< fetchSongData function")
 
   const newResults = [];
 
   // Loop through each individual word in the array to get a song for it.
   for (let i=0; i < breakUpSearchString.length; i++){
-    newResults.push(fetchSongData(breakUpSearchString[i]));
+    let songInfo = (fetchSongData(breakUpSearchString[i]))
+    console.log(songInfo + " <<< songInfo")
+    newResults.push(songInfo)
+    console.log(newResults + " <<< newResults")
   }
   // setState for results
-  console.log(newResults)
   setResults(newResults)
-    return(
-      <div>Hello</div>
-    )
+  console.log(results)
 }
 
 function fetchSongData(songName) {
 const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${searchOptions.key}&${searchOptions.format}`;
 
-  console.log(url)
+let findSong
 
   fetch(url) 
       .then(response => response.json())
 
-      // Have to implement a response for when last.fm does not provide an exact song match.
+      // Returns a string within an array
       .then(data => {
-          let findSong
+          
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
+          const randomArrayIndex = Math.floor(Math.random() * (filteredArray.length));
           filteredArray[0] ? 
-          findSong = ([filteredArray[randomArrayIndex].name + " by " + filteredArray[randomArrayIndex].artist])
-          : findSong = ([songName]);
+          findSong = (filteredArray[randomArrayIndex].name + " by " + filteredArray[randomArrayIndex].artist)
+          : findSong = (songName + " ...soooo we couldn't find a song called " + songName + "... wanna write it?");
           console.log(findSong)
-          return(findSong);
       })
-
-      const randomArrayIndex = Math.floor(Math.random() * (results.length));
+      return findSong;
     }
 
   return (
