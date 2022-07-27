@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import { useState } from 'react';
 import './App.css';
 
@@ -30,7 +31,10 @@ function getAllSongs(){
   }
   // setState for results
   console.log(newResults)
-  setResults(newResults);
+  setResults(newResults)
+    return(
+      <div>Hello</div>
+    )
 }
 
 function fetchSongData(songName) {
@@ -49,7 +53,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
           filteredArray[0] ? 
           findSong = (filteredArray[randomArrayIndex])
           : findSong = (songName);
-          console.log(findSong)
+          console.log(findSong.name + " by " + findSong.artist)
           return (findSong);
       })
 
@@ -100,16 +104,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
 
         </div>
 
-        <p>{ playlistTitle }</p>
-
-        {/* {results.map(result => {
-          return(
-                <div className='playlistDisplay' key={result.id}>
-                    {results[randomArrayIndex].name} by {result.artist}
-                </div>)
-        }
-        )
-            } */}
+        <p>{playlistTitle && playlistTitle.toUpperCase()}</p>
 
         </form>
   );
