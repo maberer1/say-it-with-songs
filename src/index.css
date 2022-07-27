@@ -26,7 +26,7 @@ button {
 }
 
 #playlist-top{
-  color: red;
+  color: darkred;
   font-size: 3rem;
   font-family: 'MonteCarlo', cursive;
   padding: 0;
@@ -40,6 +40,8 @@ button {
 }
 
 #song{
-  color: darkred;
-
+  color: white;
+  background-color: black;
+  padding: 4px;
+  margin: 3px;
 }
