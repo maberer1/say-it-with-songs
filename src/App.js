@@ -1,4 +1,4 @@
-import { useState , useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -19,11 +19,17 @@ function App() {
     getAllSongs()}
 
 function getAllSongs(){
+  // Break up searchString (entered message array) into array of individual words.
   const breakUpSearchString = searchString.split(" ");
 
+  const newResults = [];
+
+  // Loop through each individual word in the array to get a song for it.
   for (let i=0; i < breakUpSearchString.length; i++){
-    fetchSongData(breakUpSearchString[i]);
+    newResults.push(fetchSongData(breakUpSearchString[i]));
   }
+  // setState for results
+  setResults(newResults);
 }
 
 function fetchSongData(songName) {
@@ -37,13 +43,12 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
       .then(data => {
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
-          console.log(filteredArray)
-          setResults(filteredArray);
-          }
-      )
-        }
+          console.log(filteredArray[randomArrayIndex]);
+          return filteredArray[randomArrayIndex];
+      })
 
-const randomArrayIndex = Math.floor(Math.random() * (results.length));
+      const randomArrayIndex = Math.floor(Math.random() * (results.length));
+    }
 
   return (
     <form onSubmit={handleSubmit} className="form-vertical">
@@ -91,14 +96,14 @@ const randomArrayIndex = Math.floor(Math.random() * (results.length));
 
         <p>{ playlistTitle }</p>
 
-        {results.map(result => {
+        {/* {results.map(result => {
           return(
                 <div className='playlistDisplay' key={result.id}>
                     {results[randomArrayIndex].name} by {result.artist}
                 </div>)
         }
         )
-            }
+            } */}
 
         </form>
   );
