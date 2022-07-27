@@ -40,6 +40,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
   fetch(url) 
       .then(response => response.json())
 
+      // Have to implement a response for when last.fm does not provide an exact song match.
       .then(data => {
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
