@@ -81,14 +81,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
 
         <br></br>
 
-        <br></br>
-
         <div className="button-chunk">
-            <button
-                id="view-saved-playlists" 
-                type="button">Saved Playlists
-            </button>
-            
             <button
                 id="create-playlist" 
                 type="submit"
