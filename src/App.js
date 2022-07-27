@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './index.css';
 
 function App() {
 
@@ -28,37 +28,29 @@ function App() {
     
       // Loop through each individual word in the array to get a song for it.
       for (let i=0; i < breakUpSearchString.length; i++){
-        let songDataResult = await fetchSongData(breakUpSearchString[i])
-        newResults.push(songDataResult)
+        newResults.push(await fetchSongData(breakUpSearchString[i]))
       }
-      // setState for results
-      console.log(newResults)
+
       setResults(newResults)
-        return(
-          <div>Hello</div>
-        )
     }
 
 function fetchSongData(songName) {
 const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${searchOptions.key}&${searchOptions.format}`;
 
-let findSong
-
-  fetch(url) 
+  return fetch(url) 
       .then(response => response.json())
 
-      // Returns a string within an array
       .then(data => {
-          
+          let findSong
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
           const randomArrayIndex = Math.floor(Math.random() * (filteredArray.length));
           filteredArray[0] ? 
           findSong = (filteredArray[randomArrayIndex].name + " by " + filteredArray[randomArrayIndex].artist)
-          : findSong = (songName + " ...soooo we couldn't find a song called " + songName + "... wanna write it?");
+          : findSong = (songName + " ...soooo we couldn't find a song called " + songName + "... wanna write it?"); 
           console.log(findSong)
-      })
-      return findSong;
+          return findSong;
+      }) 
     }
 
   return (
@@ -106,6 +98,12 @@ let findSong
         </div>
 
         <p>{playlistTitle && playlistTitle.toUpperCase()}</p>
+
+        <ul>
+          {results.map(result => {
+            return <li>{result}</li>
+          })}
+        </ul>
 
         </form>
   );
