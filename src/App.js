@@ -51,10 +51,10 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
           filteredArray[0] ? 
-          findSong = (filteredArray[randomArrayIndex])
-          : findSong = (songName);
-          console.log(findSong.name + " by " + findSong.artist)
-          return (findSong);
+          findSong = ([filteredArray[randomArrayIndex].name + " by " + filteredArray[randomArrayIndex].artist])
+          : findSong = ([songName]);
+          console.log(findSong)
+          return(findSong);
       })
 
       const randomArrayIndex = Math.floor(Math.random() * (results.length));
