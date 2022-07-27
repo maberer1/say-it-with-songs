@@ -20,26 +20,24 @@ function App() {
     e.preventDefault();
     getAllSongs()}
 
-function getAllSongs(){
-  // Break up searchString (entered message array) into array of individual words.
-  const breakUpSearchString = searchString.split(" ");
-  console.log(breakUpSearchString + " <<< breakUpSearchString")
-  console.log(fetchSongData + " <<< fetchSongData function")
-
-  const newResults = [];
-
-  // Loop through each individual word in the array to get a song for it.
-  for (let i=0; i < breakUpSearchString.length; i++){
-    let songInfo = (fetchSongData(breakUpSearchString[i]))
-    console.log(breakUpSearchString[i])
-    console.log(songInfo + " <<< songInfo")
-    newResults.push(songInfo)
-    console.log(newResults + " <<< newResults")
-  }
-  // setState for results
-  setResults(newResults)
-  console.log(results)
-}
+    async function getAllSongs(){
+      // Break up searchString (entered message array) into array of individual words.
+      const breakUpSearchString = searchString.split(" ");
+    
+      const newResults = [];
+    
+      // Loop through each individual word in the array to get a song for it.
+      for (let i=0; i < breakUpSearchString.length; i++){
+        let songDataResult = await fetchSongData(breakUpSearchString[i])
+        newResults.push(songDataResult)
+      }
+      // setState for results
+      console.log(newResults)
+      setResults(newResults)
+        return(
+          <div>Hello</div>
+        )
+    }
 
 function fetchSongData(songName) {
 const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${searchOptions.key}&${searchOptions.format}`;
