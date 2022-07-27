@@ -29,6 +29,7 @@ function getAllSongs(){
     newResults.push(fetchSongData(breakUpSearchString[i]));
   }
   // setState for results
+  console.log(newResults)
   setResults(newResults);
 }
 
@@ -44,8 +45,10 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
       .then(data => {
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
-          console.log(filteredArray[randomArrayIndex]);
-          return filteredArray[randomArrayIndex];
+          filteredArray[0] ? 
+          console.log(filteredArray[randomArrayIndex])
+          : console.log("nope");
+          return (filteredArray[randomArrayIndex]);
       })
 
       const randomArrayIndex = Math.floor(Math.random() * (results.length));
