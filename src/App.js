@@ -47,7 +47,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
           const randomArrayIndex = Math.floor(Math.random() * (filteredArray.length));
           filteredArray[0] ? 
           findSong = (filteredArray[randomArrayIndex].name + " by " + filteredArray[randomArrayIndex].artist)
-          : findSong = (songName + " ...soooo we couldn't find a song called " + songName + "... wanna write it?"); 
+          : findSong = (songName); 
           console.log(findSong)
           return findSong;
       }) 
@@ -91,15 +91,14 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
 
         </div>
 
-        <p>{playlistTitle && playlistTitle.toUpperCase()}</p>
+        <p id="playlist-top">{playlistTitle}</p>
 
-        <ul>
+        <ul id="song-list">
           {results.map(result => {
-            return <li>{result}</li>
+            return <li id="song">{result}</li>
           })}
         </ul>
 
-        <p>Created by Madison Aberer</p>
         </form>
   );
 }

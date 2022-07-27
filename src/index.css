@@ -9,6 +9,7 @@ form {
 
 h1 {
   font-size: 3rem;
+  font-family: 'MonteCarlo', cursive;
 }
 
 .input-field {
@@ -22,4 +23,23 @@ button {
   color: white;
   background-color: black;
   padding: 1rem;
+}
+
+#playlist-top{
+  color: red;
+  font-size: 3rem;
+  font-family: 'MonteCarlo', cursive;
+  padding: 0;
+  margin: 0;
+}
+
+#song-list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#song{
+  color: darkred;
+
 }
