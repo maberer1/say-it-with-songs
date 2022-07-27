@@ -80,6 +80,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
         />
 
         <br></br>
+        <br></br>
 
         <div className="button-chunk">
             <button
@@ -98,6 +99,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
           })}
         </ul>
 
+        <p>Created by Madison Aberer</p>
         </form>
   );
 }
