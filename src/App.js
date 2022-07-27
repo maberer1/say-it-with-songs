@@ -43,12 +43,14 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
 
       // Have to implement a response for when last.fm does not provide an exact song match.
       .then(data => {
+          let findSong
           const filteredArray = data.results.trackmatches.track.filter(
           result => result.name.toLowerCase()===(songName.toLowerCase()));
           filteredArray[0] ? 
-          console.log(filteredArray[randomArrayIndex])
-          : console.log("nope");
-          return (filteredArray[randomArrayIndex]);
+          findSong = (filteredArray[randomArrayIndex])
+          : findSong = (songName);
+          console.log(findSong)
+          return (findSong);
       })
 
       const randomArrayIndex = Math.floor(Math.random() * (results.length));
