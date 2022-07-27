@@ -31,6 +31,7 @@ function getAllSongs(){
   // Loop through each individual word in the array to get a song for it.
   for (let i=0; i < breakUpSearchString.length; i++){
     let songInfo = (fetchSongData(breakUpSearchString[i]))
+    console.log(breakUpSearchString[i])
     console.log(songInfo + " <<< songInfo")
     newResults.push(songInfo)
     console.log(newResults + " <<< newResults")
