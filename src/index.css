@@ -48,7 +48,14 @@ button {
 
 /* Mobile devices */
 @media (min-width: 320px) and (max-width: 480px) {
-  
+  h1 {
+    font-size: 2em;
+  }
+  .input-field {
+    font-size: 1.2em;
+    width: 15em;
+    padding: .2em;
+  }
 }
 
 /* Tablets */
