@@ -1,10 +1,12 @@
 import React from 'react';
 
-function Songs(props) {
+function Songs({ results }) {
     return (
-        <div>
-            
-        </div>
+        <ul id="song-list">
+        {results.map(result => {
+            return <li id="song">{result}</li>
+        })}
+        </ul>
     );
 }
 

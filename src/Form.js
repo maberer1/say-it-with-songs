@@ -93,11 +93,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
 
         <Playlist playlistTitle={playlistTitle}/>
 
-        <ul id="song-list">
-          {results.map(result => {
-            return <li id="song">{result}</li>
-          })}
-        </ul>
+        <Songs results={results}/>
 
         </form>
   );
