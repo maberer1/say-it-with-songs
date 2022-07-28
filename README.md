@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+## Project Description 
+My app is a simple, interactive interface that allows a user to create a playlist that uses song titles to display a custom meesage.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My project is inspired by popular culture where communicating (especially humor) through sequential song names in a playlist is rising in popularity/relevance.
 
-## Available Scripts
+Examples: [Reddit,](https://www.reddit.com/r/weirdspotifyplaylists/) [Twitter](https://twitter.com/SpotifyWeird?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
 
-In the project directory, you can run:
 
-### `npm start`
+## Link to the API you plan to use
+https://www.last.fm/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Example data response you plan to use
+<img width="1072" alt="Screen Shot 2022-07-15 at 12 32 39 PM" src="https://media.git.generalassemb.ly/user/43396/files/dc2a664d-7781-421c-be46-f5b63e14a9ae">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Visual of your component hierarchy
+![Screen Shot 2022-07-15 at 12 31 03 PM](https://media.git.generalassemb.ly/user/43396/files/df10beba-0cf8-4a9c-85df-3895eccaaef9)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Wire Frames
+![Screen Shot 2022-07-15 at 12 18 46 PM](https://media.git.generalassemb.ly/user/43396/files/4e16f015-f717-4ee7-a73f-7f3eb2ab3ed3)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## User Stories
+1. As a hopeless romantic, I want to create a thoughtful present for my lover, so that I convey my undying affection and fondness towards them.
+2. As a meme lord troll, I want to create a stupid joke based on a very specific reference, so that all of my friends and instagram followers know that I'm original and hilarious.
+3. As an angsty youth, I want to express my discontent, so that I can express my desire for anarchy and rebellion in a healthy way.
+4. As a personality hire, I want to create a work-appropriate joke for my team, so that I can lighten the mood and express my comraderie.
 
-### `npm run eject`
+Each user is looking to create a message that expresses their individuality in order to communicate some emotion.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### MVP Goals
+As a Minimum Viable Product, a user will be able to:
+1. Name a playlist.
+2. Input text to be used to create a playlist.
+3. Receive a playlist of song titles that mimic user input.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Stretch Goals
+My Stretch Goal would be to link this project to Spotify using OAuth verification.
