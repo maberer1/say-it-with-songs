@@ -5,17 +5,11 @@ My project is inspired by popular culture where communicating (especially humor)
 
 Examples: [Reddit,](https://www.reddit.com/r/weirdspotifyplaylists/) [Twitter](https://twitter.com/SpotifyWeird?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
 
-
-## Link to the API you plan to use
-https://www.last.fm/
+Access my live project [here](https://say-it-with-songs-project.netlify.app/).
 
 
-## Example data response you plan to use
-<img width="1072" alt="Screen Shot 2022-07-15 at 12 32 39 PM" src="https://media.git.generalassemb.ly/user/43396/files/dc2a664d-7781-421c-be46-f5b63e14a9ae">
-
-
-## Visual of your component hierarchy
-![Screen Shot 2022-07-15 at 12 31 03 PM](https://media.git.generalassemb.ly/user/43396/files/df10beba-0cf8-4a9c-85df-3895eccaaef9)
+## API Use
+I used a free music API, https://www.last.fm/, to return songs with exact track title matches to the user's input. Unfortunately, this created some limitations due to a lack of exact matches for many track titles. In future iterations of this project, I hope to utilize a more expansive API in order to provide song matches for an expanded selection of search words.
 
 
 ## Wire Frames
@@ -37,5 +31,5 @@ As a Minimum Viable Product, a user will be able to:
 2. Input text to be used to create a playlist.
 3. Receive a playlist of song titles that mimic user input.
 
-### Stretch Goals
-My Stretch Goal would be to link this project to Spotify using OAuth verification.
+### Future Development
+Going forward, I will be upgrading this project to "Say It Wtih Spotify" and implement OAuth verification in order to allow users to create and save the playlists they generate.
