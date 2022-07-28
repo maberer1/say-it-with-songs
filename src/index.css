@@ -61,11 +61,11 @@ button {
 /* Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
   h1 {
-    font-size: 5em;
+    font-size: 40px;
   }
   .input-field {
-    font-size: 4em;
-    width: 40em;
+    font-size: 30px;
+    width: .7vw;
     padding: .2em;
   }
 }
