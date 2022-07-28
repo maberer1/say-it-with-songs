@@ -51,6 +51,7 @@ button {
   h1 {
     font-size: 2em;
   }
+
   .input-field {
     font-size: 1.2em;
     width: 15em;
@@ -63,10 +64,15 @@ button {
   h1 {
     font-size: 4em;
   }
+
   .input-field {
     font-size: 2em;
-    width: 20em;
+    width: 18em;
     padding: .2em;
+  }
+
+  button {
+    font-size: 2em;
   }
 }
 
