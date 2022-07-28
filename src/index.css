@@ -79,7 +79,7 @@ button {
 /* Small screens, laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
   h1 {
-    font-size: 3.5em;
+    font-size: 3.8em;
   }
 
   .input-field {
