@@ -72,13 +72,25 @@ button {
   }
 
   button {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 }
 
 /* Small screens, laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
-  
+  h1 {
+    font-size: 5em;
+  }
+
+  .input-field {
+    font-size: 3em;
+    width: 25em;
+    padding: .2em;
+  }
+
+  button {
+    font-size: 3em;
+  }
 }
 
 /* Large screens, desktops */
