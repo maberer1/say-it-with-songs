@@ -60,7 +60,14 @@ button {
 
 /* Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
-  
+  h1 {
+    font-size: 3em;
+  }
+  .input-field {
+    font-size: 2em;
+    width: 20em;
+    padding: .2em;
+  }
 }
 
 /* Small screens, laptops */
