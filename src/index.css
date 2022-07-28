@@ -54,7 +54,7 @@ button {
 
   .input-field {
     font-size: 1.2em;
-    width: 15em;
+    width: 13em;
     padding: .2em;
   }
 }
@@ -62,12 +62,12 @@ button {
 /* Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
   h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 
   .input-field {
     font-size: 2em;
-    width: 18em;
+    width: 15em;
     padding: .2em;
   }
 
@@ -84,7 +84,7 @@ button {
 
   .input-field {
     font-size: 3em;
-    width: 20em;
+    width: 18em;
     padding: .2em;
   }
 
