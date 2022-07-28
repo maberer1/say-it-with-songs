@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './index.css';
+import Playlist from './Playlist';
+import Songs from './Songs';
 
 function Form() {
 
@@ -89,7 +91,7 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
 
         </div>
 
-        <div id="playlist-top">{playlistTitle}</div>
+        <Playlist playlistTitle={playlistTitle}/>
 
         <ul id="song-list">
           {results.map(result => {
@@ -100,5 +102,5 @@ const url = `${searchOptions.api}${searchOptions.endpoint}${songName}&api_key=${
         </form>
   );
         }
-        
+
   export default Form;
